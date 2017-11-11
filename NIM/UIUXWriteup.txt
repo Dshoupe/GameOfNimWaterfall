@@ -1,0 +1,133 @@
+-----------------------------------
+This is the frame for the main menu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to the Game of Nim!
+
+1. Start Game
+2. Instructions
+0. Quit
+
+<- Option 1 ->
+*Displays a new menu*
+What Game mode would you like to play?
+1. Human vs Human
+2. Human vs AI
+3. Instructions
+4. Back
+0. Quit
+
+<- Option 2 ->
+*Displays an instruction list on how to play nim*
+How to play Nim:
+*Instructions listed*
+
+<- Option 0 ->
+*Program exits with a goodbye message*
+
+----------------------------------------
+This is the frame for the game mode menu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What Game mode would you like to play?
+1. Human vs Human
+2. Human vs AI
+3. Instructions
+4. Back
+0. Quit
+
+<- Option 1 ->
+*Asks user for what the 2 player names are*
+Enter player 1's name:
+Enter player 2's name:
+
+<- Option 2 ->
+*Asks user what the human player's name will be*
+Enter your player's name:
+
+<- Option 3 ->
+*Displays an instruction list on how to play nim*
+How to play Nim:
+*Instructions listed*
+
+<- Option 4 ->
+*Goes back to the prevoius menu*
+
+<- Option 0 ->
+*Program exits to main menu*
+
+-----------------------------------------
+This is the frame for the difficulty menu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What Difficulty would you like to play on?
+1. Easy (3,3)
+2. Medium (2,5,7)
+3. Hard (2,3,8,9)
+4. Instructions
+5. Back
+0. Quit
+
+<- Option 1 ->
+*Game will be started with easy difficulty with 2 heaps, each having 3 sticks*
+
+<- Option 2 ->
+*Game will be started with easy difficulty with 3 heaps, with 2, 5, 7 sticks respectively*
+
+<- Option 3 ->
+*Game will be started with easy difficulty with 4 heaps, with 2, 3, 8, 9 sticks respectively*
+
+<- Option 4 ->
+*Displays an instruction list on how to play nim*
+How to play Nim:
+*Instructions listed*
+
+<- Option 5 ->
+*Goes back to the prevoius menu*
+
+<- Option 0 ->
+*Program exits to main menu*
+
+------------------------------------------
+This is the frame for the player turn menu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What would you like to do?
+1. Take Turn
+2. Instructions
+0. Quit
+
+<- Option 1 ->
+*Goes to take turn prompts*
+
+<- Option 2 ->
+*Displays an instruction list on how to play nim*
+How to play Nim:
+*Instructions listed*
+
+<- Option 0 ->
+*Program exits to main menu*
+---------------------------------------------
+This is the frame for the player turn prompts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Display heaps*
+Heap 1 ...
+Heap 2 ...
+
+Enter what heap you would like to take from:
+
+How many from that heap:
+
+*This will loop until a winner is decided*
+------------------------------------
+This is the frame for winner display
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Winner is displayed*
+
+{PlayerName} Wins!!
+----------------------------------------------------------
+This is the frame for the user continue boolean expression
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Would you like to play again? (y/n)
+
+<- Option y ->
+*Main menu is displayed and the game starts over*
+
+<- Option n ->
+*Program exits with a goodbye message*

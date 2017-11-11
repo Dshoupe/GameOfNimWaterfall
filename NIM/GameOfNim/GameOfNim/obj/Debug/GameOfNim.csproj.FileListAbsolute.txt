@@ -1,0 +1,14 @@
+C:\Users\Dylan Shoupe\Desktop\Principles of Software Engineering\GameOfNim\GameOfNim\bin\Debug\GameOfNim.exe.config
+C:\Users\Dylan Shoupe\Desktop\Principles of Software Engineering\GameOfNim\GameOfNim\bin\Debug\GameOfNim.exe
+C:\Users\Dylan Shoupe\Desktop\Principles of Software Engineering\GameOfNim\GameOfNim\bin\Debug\GameOfNim.pdb
+C:\Users\Dylan Shoupe\Desktop\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.csprojResolveAssemblyReference.cache
+C:\Users\Dylan Shoupe\Desktop\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.csproj.CoreCompileInputs.cache
+C:\Users\Dylan Shoupe\Desktop\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.exe
+C:\Users\Dylan Shoupe\Desktop\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.pdb
+C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\GameOfNim\GameOfNim\bin\Debug\GameOfNim.exe.config
+C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\GameOfNim\GameOfNim\bin\Debug\GameOfNim.exe
+C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\GameOfNim\GameOfNim\bin\Debug\GameOfNim.pdb
+C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.csprojResolveAssemblyReference.cache
+C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.csproj.CoreCompileInputs.cache
+C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.exe
+C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\GameOfNim\GameOfNim\obj\Debug\GameOfNim.pdb
