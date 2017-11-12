@@ -6,3 +6,10 @@ C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engin
 C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\ShoupeD_CIO.dll
 C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.exe
 C:\Users\Dylan Shoupe\Google Drive\Computer Science\Principles of Software Engineering\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.pdb
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.exe.config
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.exe
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.pdb
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.exe
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.pdb
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\ShoupeD_CIO.dll
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.csprojResolveAssemblyReference.cache

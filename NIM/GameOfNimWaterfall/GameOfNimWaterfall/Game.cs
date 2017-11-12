@@ -45,6 +45,7 @@ namespace GameOfNimWaterfall.Models
                 switch (mainSelection)
                 {
                     case 1:
+                        //boolean to control the Game Mode menu loop
                         bool exitMode = false;
                         do
                         {
@@ -59,72 +60,96 @@ namespace GameOfNimWaterfall.Models
                                 case 2:
                                     //This method call creates 2 characters, those character's types are based on gameMode, which is the GameMode Menu's return
                                     CreatePlayers(gameMode);
+                                    //Initialize heapNums for the upcoming difficulty menu
+                                        int[] heapNums = new int[] { 0 };
                                     //Game Color selection - It is setting class level variables of the console colors so other methods could see the
                                     //colors. We store four different colors in a ConsoleColor array for user selection.
-                                    Console.WriteLine("What game color would you like to play on: ");
-                                    gameColor = CIO.PromptForMenuSelection(new string[] { "Red", "Magenta", "Green", "Blue" }, false);
-                                    Console.ForegroundColor = consoleColors[gameColor-1];
+                                    bool exitColor = true;
 
-                                    //Initialize heapNums for the upcoming menu
-                                    int[] heapNums = new int[] { 0 };
-                                    bool exitDifficulty = false;
-                                    do
-                                    {
-                                        //This menu prompts the user to select a game difficulty for the heaps to be created with. Either {3,3}, {2,5,7},
-                                        //or {2,3,8,9} as heap ranges
-                                        Console.WriteLine("\nChoose a difficulty: ");
-                                        int difficultySelect = CIO.PromptForMenuSelection(new String[] { "Easy(3,3)", "Medium(2,5,7)", "Hard(2,3,8,9)", "Instructions", "Go Back" }, true);
-
-                                        heapNums = new int[] { 0 };
-                                        switch (difficultySelect)
+                                    do {
+                                        Console.WriteLine("What game color would you like to play on: ");
+                                        gameColor = CIO.PromptForMenuSelection(new string[] { "Red", "Magenta", "Green", "Blue", "Go Back" }, false);
+                                        exitColor = true;
+                                        //boolean to control the Difficulty selection loop
+                                        bool exitDifficulty = false;
+                                        switch (gameColor)
                                         {
-                                            case 1:
-                                                //Easy
-                                                heapNums = new int[] { 3, 3 };
-                                                exitDifficulty = true;
-                                                break;
-                                            case 2:
-                                                //Medium
-                                                heapNums = new int[] { 2, 5, 7 };
-                                                exitDifficulty = true;
-                                                break;
-                                            case 3:
-                                                //Hard
-                                                heapNums = new int[] { 2, 3, 8, 9 };
-                                                exitDifficulty = true;
-                                                break;
-                                            case 4:
-                                                //Method call for priniting instructions
-                                                PrintInstructions();
-                                                break;
-                                            case 5:
-                                                //Go back one menu layer, to the gamemode selection
-                                                heapNums = new int[] { 0 };
-                                                Console.ResetColor();
-                                                exitDifficulty = true;
-                                                break;
-                                            case 0:
-                                                //Exits to the main menu
-                                                heapNums = new int[] { 0 };
-                                                Console.ResetColor();
-                                                exitMode = true;
-                                                exitDifficulty = true;
-                                                break;
-                                        }
-                                        //This is a method call to CreateHeaps() so that the heaps can be created for game usage. Takes in the int array 
-                                        //for difficulty
-                                        CreateHeaps(heapNums);
-                                    } while (!exitDifficulty);
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                        case 4:
+                                            //Set Color and display Difficulty selection
+                                            Console.ForegroundColor = consoleColors[gameColor-1];
 
+                                            do while (!exitDifficulty)
+                                            {
+                                                //Difficulty selection. This menu prompts the user to select a game difficulty for the heaps to be created with. Either {3,3}, {2,5,7},
+                                                //or {2,3,8,9} as heap ranges
+                                                Console.WriteLine("\nChoose a difficulty: ");
+                                                int difficultySelect = CIO.PromptForMenuSelection(new String[] { "Easy(3,3)", "Medium(2,5,7)", "Hard(2,3,8,9)", "Instructions", "Go Back" }, true);
+
+                                                heapNums = new int[] { 0 };
+                                                switch (difficultySelect)
+                                                {
+                                                    case 1:
+                                                        //Easy
+                                                        heapNums = new int[] { 3, 3 };
+                                                        exitDifficulty = true;
+                                                        break;
+                                                    case 2:
+                                                        //Medium
+                                                        heapNums = new int[] { 2, 5, 7 };
+                                                        exitDifficulty = true;
+                                                        break;
+                                                    case 3:
+                                                        //Hard
+                                                        heapNums = new int[] { 2, 3, 8, 9 };
+                                                        exitDifficulty = true;
+                                                        break;
+                                                    case 4:
+                                                        //Method call for priniting instructions
+                                                        PrintInstructions();
+                                                        break;
+                                                    case 5:
+                                                        //Go back one menu layer to the Color selection
+                                                        heapNums = new int[] { 0 };
+                                                        Console.ResetColor();
+                                                        exitColor = false;
+                                                        exitDifficulty = true;
+                                                        break;
+                                                    case 0:
+                                                        //Exits to the main menu
+                                                        heapNums = new int[] { 0 };
+                                                        Console.ResetColor();
+                                                        exitMode = true;
+                                                        exitDifficulty = true;
+                                                        break;
+                                                }
+                                            } while (!exitDifficulty);
+                                            break;
+                                        case 5:
+                                            //Go back one menu layer to the Game Mode selection
+                                            exitMode = false;
+                                            break;
+                                        default:
+                                            //Repeat Color selection
+                                            exitColor = false;
+                                            break;
+                                      }
+                                        
+                                    } while (!exitColor);
                                     //Play Game. This starts the game so long as the difficulty array isn't 0
                                     if (heapNums[0] != 0)
                                     {
+                                        //This is a method call to CreateHeaps() so that the heaps can be created for game usage. Takes in the int array 
+                                        //set based on Difficulty
                                         CreateHeaps(heapNums);
                                         PlayGame();
+                                        //Prompt for whether the user wants to play again
                                         exitMode = CIO.PromptForBool("Would you like to play again?(y/n)", "n", "y");
+                                        //Reset Color
                                         Console.ResetColor();
                                     }
-
                                     break;
                                 case 3:
                                     //Method call for priniting instructions
@@ -207,17 +232,16 @@ namespace GameOfNimWaterfall.Models
             do
             {
                 //This will generate a display for the heaps, as well as color them dependant on the user's gameColor
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 for (int i = 0; i < heaps.Length; i++)
                 {
                     Console.Write($"Heap {i + 1}: {heaps[i].Tiles} - ");
                     for (int x = 0; x < heaps[i].Tiles; x++)
                     {
                         Console.ForegroundColor = ConsoleColor.Black;
-                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.BackgroundColor = consoleColors[gameColor - 1];
                         Console.Write(" * ");
                         Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = consoleColors[gameColor - 1];
                     }
                     Console.WriteLine();
                 }
