@@ -150,11 +150,21 @@ namespace GameOfNimWaterfall.Models
             Console.WriteLine("Goodbye!");
         }
 
+        /// <summary>
+        /// This method uses the static random instance at class level to randomly generate an int from 1 to parameter max
+        /// </summary>
+        /// <param name="max">The maximum the int can be, exclusive max bound</param>
+        /// <returns>The random int between 1 and max</returns>
         public static int GetRandom(int max)
         {
             return rand.Next(1, max + 1);
         }
 
+        /// <summary>
+        /// Creates and stores Heap instances into the class level Heap[]. The heap tileAmount are based off of the difficulty selected in the difficulty menu,
+        /// the difficulty heap tile number are stored in an int[] for easy access
+        /// </summary>
+        /// <param name="heapDifficulty">The difficulty array of the heap tiles</param>
         private static void CreateHeaps(int[] heapDifficulty)
         {
             heaps = new Heap[heapDifficulty.Length];
@@ -164,13 +174,19 @@ namespace GameOfNimWaterfall.Models
             }
         }
 
+        /// <summary>
+        /// Creates players and populates the class level Player[]. Based on the count passed in, if 1 then there's a human and AI, if 2 then there's 2 human players
+        /// </summary>
+        /// <param name="count">The count of human players there will be in the program</param>
         private static void CreatePlayers(int count)
         {
+            //AI vs Human
             if (count == 1)
             {
                 players[0] = new HumanPlayer(CIO.PromptForInput("\nEnter your player's name: ", false));
                 players[1] = new AIPlayer();
             }
+            //Human vs Human
             else
             {
                 players[0] = new HumanPlayer(CIO.PromptForInput("Enter the first player's name: ", false));
@@ -178,12 +194,19 @@ namespace GameOfNimWaterfall.Models
             }
         }
 
+        /// <summary>
+        /// Houses the game logic, meaning player turn, win logic, heap display, etc. When this method runs, it will continually run until there is a winner
+        /// or the user quits the game early
+        /// </summary>
         private static void PlayGame()
         {
+            //Gets a random int for used for playerTurn, this number will be modded by 2 to figure out who goes first
             int playerTurn = GetRandom(100);
+            //Main Play Game loop
             bool gameOver = false;
             do
             {
+                //This will generate a display for the heaps, as well as color them dependant on the user's gameColor
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 for (int i = 0; i < heaps.Length; i++)
                 {
@@ -200,19 +223,27 @@ namespace GameOfNimWaterfall.Models
                 }
                 Console.ForegroundColor = consoleColors[gameColor - 1];
 
+                //playerHeap holds the player's turn. A player's turn consists of a heapNumer and a tileAmount for whichever heap they selected
                 int[] playerHeap = null;
+                //The "playerTurn % 2" selection chooses the player who is currently going, it can return 2 things, a 1 or a 0, amking it easy for selection
                 Console.WriteLine($"It is {players[playerTurn % 2].Name}'s turn\n");
                 playerHeap = players[playerTurn % 2].TakeTurn();
 
+                //In the players turn, they have the option to quit midgame, if their TakeTurn() method returns an array of {0,0} they exit the loop and go to the play again prompt
                 if (playerHeap[0] == 0 && playerHeap[1] == 0)
                 {
                     gameOver = true;
                 }
+                //This else plays the game if the user's TakeTurn() didn't return {0,0}
                 else
                 {
+                    //This is the turn the player has made, removing the tiles from the heap
                     heaps[playerHeap[0]].Tiles -= playerHeap[1];
+                    //playerTurn is incremented to the next player
                     playerTurn++;
 
+                    //Finally, for the win logic, we use a total, if all of the heaps tileAmounts sum to a total 0, that means a player has taken the final
+                    //piece(s) and the winner will be chosen based on the player that last wents
                     int total = 0;
                     foreach (Heap i in heaps)
                     {
@@ -221,17 +252,24 @@ namespace GameOfNimWaterfall.Models
                     gameOver = (total == 0);
                     if (gameOver && total == 0)
                     {
+                        //Winner is displayed
                         Console.BackgroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("\t\t\t\t\t\t");
                         Console.WriteLine($"\t\t{players[(playerTurn % 2)].Name} is the winner!\t\t");
                         Console.WriteLine("\t\t\t\t\t\t");
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadLine();
                     }
                 }
+                //Once the game loop ends the user is prompted to play again, if yes it goes to the select gamemode menu, if no, it goes back to the main menu
             } while (!gameOver);
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Displays instructions on how to play the game of Nim
+        /// </summary>
         public static void PrintInstructions()
         {
             Console.WriteLine("\nInstructions:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nAt the start of the first player's turn (chosen randomly), they will take any number from 1 to the max heap count,\nfrom any heap, as long as that heap has a number greater than 0. After this the next player's turn is made.\nThis loop continues until there is only one move left to make, which will be to take the final tile from the heap,\nwhich makes this player the loser of the round.\n");
