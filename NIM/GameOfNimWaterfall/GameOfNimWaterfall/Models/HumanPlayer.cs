@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace GameOfNimWaterfall.Models
 {
+    /// <summary>
+    /// A human implementation of the abstract parent, Player
+    /// </summary>
     public class HumanPlayer : Player
     {
+        /// <summary>
+        /// Human player's implementation of TakeTurn(). It will prompt the user infinitly until the user enters valid information
+        /// </summary>
+        /// <returns>An int[] of heapNumber and tileAmount</returns>
         public override int[] TakeTurn()
         {
             int heap = 0;
@@ -16,6 +23,7 @@ namespace GameOfNimWaterfall.Models
             bool isDone = false;
             do
             {
+                //A menu allowing the user to see the instructions or quit as well as its turn
                 int userChoice = CIO.PromptForMenuSelection(new string[] { "Take Turn", "Instructions" }, true);
                 switch (userChoice)
                 {
@@ -46,6 +54,10 @@ namespace GameOfNimWaterfall.Models
             return new int[] { heap, tileAmount };
         }
 
+        /// <summary>
+        /// Constructor that takes in the player's name. Sets the property
+        /// </summary>
+        /// <param name="name">The current player's name</param>
         public HumanPlayer(string name)
         {
             Name = name;

@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace GameOfNimWaterfall.Models
 {
+    /// <summary>
+    /// A AI implementation of the abstract parent, Player
+    /// </summary>
     public class AIPlayer : Player
     {
+        /// <summary>
+        /// AI's implementation of TakeTurn(). It randomly generates the heapNumber and tileAmount and validates each random
+        /// </summary>
+        /// <returns></returns>
         public override int[] TakeTurn()
         {
             int heap = 0;
@@ -23,6 +30,9 @@ namespace GameOfNimWaterfall.Models
             return new int[] { heap, tileAmount };
         }
 
+        /// <summary>
+        /// Contructs a new instance of AIPlayer with the name of "Computer"
+        /// </summary>
         public AIPlayer()
         {
             Name = "Computer";
