@@ -31,6 +31,10 @@ namespace GameOfNimWaterfall.Models
                         do
                         {
                             heap = CIO.PromptForInt($"Enter a heap (1 - {Game.heaps.Count()}): ", 1, Game.heaps.Count())-1;
+                            if (Game.heaps[heap].Tiles == 0)
+                            {
+                                Console.WriteLine($"Heap {heap} is empty, choose another heap with tiles in it.");
+                            }
                         } while (Game.heaps[heap].Tiles == 0);
 
                         tileAmount = CIO.PromptForInt($"How many tiles would you like to take (1 - {Game.heaps[heap].Tiles}): ", 1, Game.heaps[heap].Tiles);

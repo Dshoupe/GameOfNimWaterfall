@@ -45,7 +45,7 @@ namespace GameOfNimWaterfall.Models
                 switch (mainSelection)
                 {
                     case 1:
-                        //boolean to control the Game Mode menu loop
+                        //Boolean to control the Game Mode menu loop
                         bool exitMode = false;
                         do
                         {
@@ -298,13 +298,13 @@ namespace GameOfNimWaterfall.Models
                         Console.WriteLine("\t\t\t\t\t\t");
                         Console.WriteLine($"\t\t{players[(playerTurn % 2)].Name} is the winner!\t\t");
                         Console.WriteLine("\t\t\t\t\t\t");
+                        Console.BackgroundColor = ConsoleColor.Black;
                         Console.WriteLine("\nPress any key to continue");
                         Console.ReadLine();
                     }
                 }
                 //Once the game loop ends the user is prompted to play again, if yes it goes to the select gamemode menu, if no, it goes back to the main menu
             } while (!gameOver);
-            Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine();
         }
 
