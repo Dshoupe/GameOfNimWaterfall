@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GameOfNimWaterfall;
 using GameOfNimWaterfall.Models;
+using System.IO;
 
 namespace NimTests
 {
@@ -17,9 +18,17 @@ namespace NimTests
         }
 
         [TestMethod]
-        public void Test1()
+        public void ConsoleValidation()
         {
-            //using (stringW)
+            using (StringWriter sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+
+                Game.GameSetup();
+
+                string expected = string.Format("Ploeh{0}", Environment.NewLine);
+                Assert.AreEqual(expected, sw.ToString());
+            }
         }
     }
 }

@@ -313,7 +313,7 @@ namespace GameOfNimWaterfall.Models
         /// </summary>
         public static void PrintInstructions()
         {
-            Console.WriteLine("\nInstructions:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nDuring a player's turn, they will select 1 heap to remove tiles from,\nas long as that heap has at least 1 tile to remove. Players will remove\nbetween 1 and all of the tiles from the selected heap. After this, the\nnext player's turn is made.This continues until all tiles have been\nremoved from play.The player to remove the last tile is the loser.\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+            Console.WriteLine("\nInstructions:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nDuring a player's turn, they will select 1 heap to remove tiles from,\nas long as that heap has at least 1 tile to remove. Players will remove\nbetween 1 and all of the tiles from the selected heap. After this, the\nnext player's turn is made. This continues until all tiles have been\nremoved from play. The player to remove the last tile is the loser.\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         }
     }
 }
