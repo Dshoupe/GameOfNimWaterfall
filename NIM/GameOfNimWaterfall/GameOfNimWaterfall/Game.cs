@@ -61,7 +61,7 @@ namespace GameOfNimWaterfall.Models
                                     //This method call creates 2 characters, those character's types are based on gameMode, which is the GameMode Menu's return
                                     CreatePlayers(gameMode);
                                     //Initialize heapNums for the upcoming difficulty menu
-                                        int[] heapNums = new int[] { 0 };
+                                    int[] heapNums = new int[] { 0 };
                                     //Game Color selection - It is setting class level variables of the console colors so other methods could see the
                                     //colors. We store four different colors in a ConsoleColor array for user selection.
                                     bool exitColor = true;
