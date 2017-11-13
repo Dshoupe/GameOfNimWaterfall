@@ -210,14 +210,29 @@ namespace GameOfNimWaterfall.Models
             //AI vs Human
             if (count == 1)
             {
-                players[0] = new HumanPlayer(CIO.PromptForInput("\nEnter your player's name: ", false));
+                string playerName = CIO.PromptForInput("\nEnter your player's name: ", true).Trim();
+                if (string.IsNullOrEmpty(playerName))
+                {
+                    playerName = "Player";
+                }
+                players[0] = new HumanPlayer(playerName);
                 players[1] = new AIPlayer();
             }
             //Human vs Human
             else
             {
-                players[0] = new HumanPlayer(CIO.PromptForInput("Enter the first player's name: ", false));
-                players[1] = new HumanPlayer(CIO.PromptForInput("\nEnter the second player's name: ", false));
+                string playerName1 = CIO.PromptForInput("\nEnter in player 1's name: ", true).Trim();
+                if (string.IsNullOrEmpty(playerName1))
+                {
+                    playerName1 = "Player 1";
+                }
+                players[0] = new HumanPlayer(playerName1);
+                string playerName2 = CIO.PromptForInput("\nEnter in player 2's name: ", true).Trim();
+                if (string.IsNullOrEmpty(playerName2))
+                {
+                    playerName2 = "Player 2";
+                }
+                players[1] = new HumanPlayer(playerName2);
             }
         }
 
