@@ -16,8 +16,10 @@ C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.exe.config
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.exe
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.pdb
-C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\ShoupeD_CIO.dll
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.csprojResolveAssemblyReference.cache
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.csproj.CoreCompileInputs.cache
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.exe
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.pdb
+C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.dll
+C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.pdb
+C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.xml

@@ -32,9 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ShoupeD_CIO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ShoupeD_CIO.dll</HintPath>
+    <Reference Include="StringerK_CIO">
+      <HintPath>..\..\..\..\..\..\Downloads\ConsoleIO\ConsoleIO\ConsoleIO\bin\Debug\StringerK_CIO.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

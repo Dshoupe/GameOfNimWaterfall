@@ -170,6 +170,8 @@ namespace GameOfNimWaterfall.Models
                         //Exits the program gracefully with a goodbye message
                         exitGame = true;
                         break;
+                    default:
+                        break;
                 }
             } while (!exitGame);
             Console.WriteLine("Goodbye!");
