@@ -313,7 +313,7 @@ namespace GameOfNimWaterfall.Models
         /// </summary>
         public static void PrintInstructions()
         {
-            Console.WriteLine("\nInstructions:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nAt the start of the first player's turn (chosen randomly), they will take any number from 1 to the max heap count,\nfrom any heap, as long as that heap has a number greater than 0. After this the next player's turn is made.\nThis loop continues until there is only one move left to make, which will be to take the final tile from the heap,\nwhich makes this player the loser of the round.\n");
+            Console.WriteLine("\nInstructions:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nDuring a player's turn, they will select 1 heap to remove tiles from,\nas long as that heap has at least 1 tile to remove. Players will remove\nbetween 1 and all of the tiles from the selected heap. After this, the\nnext player's turn is made.This continues until all tiles have been\nremoved from play.The player to remove the last tile is the loser.\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         }
     }
 }
