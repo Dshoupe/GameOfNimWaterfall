@@ -4,6 +4,7 @@ using GameOfNimWaterfall;
 using GameOfNimWaterfall.Models;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace NimTests
 {
@@ -179,6 +180,81 @@ namespace NimTests
             int randomInt = Game.GetRandom(-1);
         }
 
+        [TestMethod]
+        public void HumanPlayerNameGamemode1()
+        {
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader("Test"))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+                    Game.CreatePlayers(1);
+                }
+            }
+            Assert.AreEqual("Test", Game.players[0].Name);
+        }
+
+        [TestMethod]
+        public void HumanPlayerNameGamemode2()
+        {
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader("Test\nTest2"))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+                    Game.CreatePlayers(2);
+                }
+            }
+            Assert.AreEqual("Test", Game.players[0].Name);
+            Assert.AreEqual("Test2", Game.players[1].Name);
+        }
+
+        [TestMethod]
+        public void HumanPlayer1DefaultNameGameMode1()
+        {
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader(" "))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+                    Game.CreatePlayers(1);
+                }
+            }
+            Assert.AreEqual("Player", Game.players[0].Name);
+        }
+
+        [TestMethod]
+        public void HumanPlayer1DefaultNameGameMode2()
+        {
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader(" \n "))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+                    Game.CreatePlayers(2);
+                }
+            }
+            Assert.AreEqual("Player 1", Game.players[0].Name);
+            Assert.AreEqual("Player 2", Game.players[1].Name);
+        }
+        [TestMethod]
+        public void AIPlayerNameGamemode1()
+        {
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader("Test"))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+                    Game.CreatePlayers(1);
+                }
+            }
+            Assert.AreEqual("Computer", Game.players[1].Name);
+        }
         /*AI TakeTurn
          *      -Heap number random generates correct random values
          */
@@ -206,6 +282,136 @@ namespace NimTests
                 }
             }
             Assert.IsTrue(passed == 1000);
+        }
+
+        private string color = "";
+        private string difficulty = "";
+
+        //1\n2\nTester1\nTester2\n1\n1\n1\n1\n3\ny\n1\n2\n3\ny\nT\nn\n0
+        [TestMethod]
+        public void ForegroundCheck1()
+        {
+            color = "1";
+            Thread thread = new Thread(ColorTest);
+            thread.Start();
+            Thread.Sleep(2000);
+            Assert.AreEqual(ConsoleColor.Red, Console.ForegroundColor);
+            thread.Abort();
+        }
+
+        [TestMethod]
+        public void ForegroundCheck2()
+        {
+            color = "2";
+            Thread thread = new Thread(ColorTest);
+            thread.Start();
+            Thread.Sleep(2000);
+            Assert.AreEqual(ConsoleColor.Magenta, Console.ForegroundColor);
+            thread.Abort();
+        }
+
+        [TestMethod]
+        public void ForegroundCheck3()
+        {
+            color = "3";
+            Thread thread = new Thread(ColorTest);
+            thread.Start();
+            Thread.Sleep(2000);
+            Assert.AreEqual(ConsoleColor.Green, Console.ForegroundColor);
+            thread.Abort();
+        }
+
+        [TestMethod]
+        public void ForegroundCheck4()
+        {
+            color = "4";
+            Thread thread = new Thread(ColorTest);
+            thread.Start();
+            Thread.Sleep(2000);
+            Assert.AreEqual(ConsoleColor.Cyan, Console.ForegroundColor);
+            thread.Abort();
+        }
+
+        public void ColorTest()
+        {
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader($"1\n2\nTester1\nTester2\n{color}"))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    Game.GameSetup();
+                }
+            }
+        }
+
+        [TestMethod]
+        public void HeapCheck1()
+        {
+            difficulty = "1";
+            Thread thread = new Thread(HeapTest);
+            thread.Start();
+            Thread.Sleep(2000);
+            Assert.AreEqual(3, Game.heaps[0].Tiles);
+            Assert.AreEqual(3, Game.heaps[1].Tiles);
+        }
+
+        [TestMethod]
+        public void HeapCheck2()
+        {
+            difficulty = "2";
+            Thread thread = new Thread(HeapTest);
+            thread.Start();
+            Thread.Sleep(2000);
+            Assert.AreEqual(2, Game.heaps[0].Tiles);
+            Assert.AreEqual(5, Game.heaps[1].Tiles);
+            Assert.AreEqual(7, Game.heaps[2].Tiles);
+        }
+
+        [TestMethod]
+        public void HeapCheck3()
+        {
+            difficulty = "3";
+            Thread thread = new Thread(HeapTest);
+            thread.Start();
+            Thread.Sleep(2000);
+            Assert.AreEqual(2, Game.heaps[0].Tiles);
+            Assert.AreEqual(3, Game.heaps[1].Tiles);
+            Assert.AreEqual(8, Game.heaps[2].Tiles);
+            Assert.AreEqual(9, Game.heaps[3].Tiles);
+        }
+
+        public void HeapTest()
+        {
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader($"1\n2\nTester1\nTester2\n1\n{difficulty}"))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    Game.GameSetup();
+                }
+            }
+        }
+
+        [TestMethod]
+        public void PlayerTurnCheck()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                int mod = Game.GetRandom(100) % 2;
+
+                if (mod == 1)
+                {
+                    Assert.AreEqual(1, mod);
+                }
+                else
+                {
+                    Assert.AreEqual(0, mod);
+                }
+            }
         }
         /*
          *      -Heap tile random generates correct random values
