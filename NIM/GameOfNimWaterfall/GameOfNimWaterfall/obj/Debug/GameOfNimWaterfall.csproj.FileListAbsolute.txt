@@ -22,14 +22,11 @@ C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.dll
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.pdb
 C:\Users\Dylan Shoupe\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.xml
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.pdb
+C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.xml
 C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.exe.config
 C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.exe
 C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\GameOfNimWaterfall.pdb
-C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.pdb
-C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.xml
-C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.csprojResolveAssemblyReference.cache
 C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.csproj.CoreCompileInputs.cache
 C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.exe
 C:\Users\KStringer\Documents\GitHub\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\obj\Debug\GameOfNimWaterfall.pdb
-C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.pdb
-C:\Users\Laxdyn\Principles of Software Development\NimS2\GameOfNimWaterfall\NIM\GameOfNimWaterfall\GameOfNimWaterfall\bin\Debug\StringerK_CIO.xml
