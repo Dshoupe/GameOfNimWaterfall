@@ -20,8 +20,8 @@ namespace GameOfNimWaterfall.Models
             int heap = 0;
             do
             {
-                heap = Game.GetRandom(Game.heaps.Count())-1;
-            } while (Game.heaps[heap].Tiles == 0);
+                heap = Game.GetRandom(Game.heaps.Count()-1);
+            } while (heap == 0 || Game.heaps[heap].Tiles == 0);
 
             int tileAmount = Game.GetRandom(Game.heaps[heap].Tiles);
 

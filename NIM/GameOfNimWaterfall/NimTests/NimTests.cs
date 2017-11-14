@@ -178,5 +178,49 @@ namespace NimTests
         {
             int randomInt = Game.GetRandom(-1);
         }
+
+        /*AI TakeTurn
+         *      -Heap number random generates correct random values
+         */
+         [TestMethod]
+        public void AIMakesLegalMoves()
+        {
+            AIPlayer ai = new AIPlayer();
+            int[] output = new int[2];
+            int passed = 0;
+            
+            for (int i = 0; i < 1000; i++)
+            {
+                Game.CreateHeaps(new int[] { 2, 3, 8, 9 });
+                output = ai.TakeTurn();
+                if(output[0] <= Game.heaps.Count() 
+                    && output[0] >= 1 
+                    && output[1] <= Game.heaps[output[0]].Tiles 
+                    && output[1] >= 1)
+                {
+                    passed++;
+                }
+                else
+                {
+                    Console.WriteLine(output[0] + ", " + output[1]);
+                }
+            }
+            Assert.IsTrue(passed == 1000);
+        }
+        /*
+         *      -Heap tile random generates correct random values
+         *      -Returns an int array of heap number and heap tiles
+         *      -Returns an int array of heap number and heap tiles IN ORDER
+         * 
+         * Human TakeTurn
+         *      -Make sure console output displays the instructions
+         *      -Selecting empty/null heaps are invalid
+         *      -Displays the empty heap selection prompt
+         *      -Player can verify their turn
+         *      -Can quit mid selection
+         *      -Returns an int array of heap number and heap tiles
+         *      -Returns an int array of heap number and heap tiles IN ORDER
+         */
+
     }
 }
