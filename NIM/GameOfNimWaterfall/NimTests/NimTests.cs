@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GameOfNimWaterfall;
 using GameOfNimWaterfall.Models;
 using System.IO;
+using System.Linq;
 
 namespace NimTests
 {
@@ -81,18 +82,101 @@ namespace NimTests
             Player player = new HumanPlayer(null);
         }
 
+        //[TestMethod]
+        //public void ConsoleValidation()
+        //{
+        //    using (StringWriter sw = new StringWriter())
+        //    {
+        //        Console.SetOut(sw);
+
+        //        Game.GameSetup();
+
+        //        string expected = string.Format("Ploeh{0}", Environment.NewLine);
+        //        Assert.AreEqual(expected, sw.ToString());
+        //    }
+        //}
         [TestMethod]
-        public void ConsoleValidation()
+        public void CreateHeapsEasyMode()
         {
-            using (StringWriter sw = new StringWriter())
+            int[] expectedInput = new int[] { 3, 3 };
+            Heap[] expectedOutcome = { new Heap(3), new Heap(3) };
+            Game.CreateHeaps(expectedInput);
+            Assert.AreEqual(expectedOutcome[0].Tiles, Game.heaps[0].Tiles);
+            Assert.AreEqual(expectedOutcome[1].Tiles, Game.heaps[1].Tiles);
+        }
+
+        [TestMethod]
+        public void CreateHeapsMediumMode()
+        {
+            int[] expectedInput = new int[] { 2, 5, 7 };
+            Heap[] expectedOutcome = { new Heap(2), new Heap(5), new Heap(7) };
+            Game.CreateHeaps(expectedInput);
+            Assert.AreEqual(expectedOutcome[0].Tiles, Game.heaps[0].Tiles);
+            Assert.AreEqual(expectedOutcome[1].Tiles, Game.heaps[1].Tiles);
+            Assert.AreEqual(expectedOutcome[2].Tiles, Game.heaps[2].Tiles);
+        }
+
+        [TestMethod]
+        public void CreateHeapsHardMode()
+        {
+            int[] expectedInput = new int[] { 2, 3, 8, 9 };
+            Heap[] expectedOutcome = { new Heap(2), new Heap(3), new Heap(8), new Heap(9) };
+            Game.CreateHeaps(expectedInput);
+            Assert.AreEqual(expectedOutcome[0].Tiles, Game.heaps[0].Tiles);
+            Assert.AreEqual(expectedOutcome[1].Tiles, Game.heaps[1].Tiles);
+            Assert.AreEqual(expectedOutcome[2].Tiles, Game.heaps[2].Tiles);
+            Assert.AreEqual(expectedOutcome[3].Tiles, Game.heaps[3].Tiles);
+        }
+        [TestMethod]
+        public void RandomizerTestingLowerBoundInclusive()
+        {
+            int[] output = new int[100];
+            for (int i = 0; i < 100; i++)
             {
-                Console.SetOut(sw);
-
-                Game.GameSetup();
-
-                string expected = string.Format("Ploeh{0}", Environment.NewLine);
-                Assert.AreEqual(expected, sw.ToString());
+                output[i] = Game.GetRandom(10);
             }
+            Assert.IsTrue(output.Where(x => x < 1).Count() == 0);
+        }
+
+        [TestMethod]
+        public void RandomizerTestingUpperBoundInclusive()
+        {
+            int[] output = new int[100];
+            for (int i = 0; i < 100; i++)
+            {
+                output[i] = Game.GetRandom(10);
+            }
+            Assert.IsTrue(output.Where(x => x > 10).Count() == 0);
+        }
+
+        [TestMethod]
+        public void RandomizerTestingInclusiveMax()
+        {
+            int[] output = new int[100];
+            for (int i = 0; i < 100; i++)
+            {
+                output[i] = Game.GetRandom(10);
+            }
+            Assert.IsTrue(output.Where(x => x == 10).Count() > 0);
+        }
+
+        [TestMethod]
+        public void RandomizerTestingInclusiveMin()
+        {
+            int[] output = new int[100];
+            for (int i = 0; i < 100; i++)
+            {
+                output[i] = Game.GetRandom(10);
+            }
+            Assert.IsTrue(output.Where(x => x == 1).Count() > 0);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+        "A userId of null was inappropriately allowed.")]
+        public void RandomizerNegativeMaxValue()
+        {
+            int randomInt = Game.GetRandom(-1);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace GameOfNimWaterfall.Models
         public static Heap[] heaps;
         //Holds the players array so that every method has access to the 2 players. players is an array of Player that can hold 2 human players or an AI
         //player with a human as a gamemode
-        private static Player[] players = new Player[2];
+        public static Player[] players = new Player[2];
         //This random is here so that the GetRandom() method can access a static random
         private static Random rand = new Random();
         //This is a holder for the 4 different foreground colors a user can choose for the game colors. They have the options of Red, Magenta, Green,
@@ -192,7 +192,7 @@ namespace GameOfNimWaterfall.Models
         /// the difficulty heap tile number are stored in an int[] for easy access
         /// </summary>
         /// <param name="heapDifficulty">The difficulty array of the heap tiles</param>
-        private static void CreateHeaps(int[] heapDifficulty)
+        public static void CreateHeaps(int[] heapDifficulty)
         {
             heaps = new Heap[heapDifficulty.Length];
             for (int i = 0; i < heapDifficulty.Length; i++)
@@ -205,7 +205,7 @@ namespace GameOfNimWaterfall.Models
         /// Creates players and populates the class level Player[]. Based on the count passed in, if 1 then there's a human and AI, if 2 then there's 2 human players
         /// </summary>
         /// <param name="count">The count of human players there will be in the program</param>
-        private static void CreatePlayers(int count)
+        public static void CreatePlayers(int count)
         {
             //AI vs Human
             if (count == 1)
